@@ -1,3 +1,45 @@
-<body contenteditable spellcheck="false">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta content="True" name="HandheldFriendly">
+    <meta name="Content-Type" content="text/html;charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Document</title>
+    <style>
+    .button {
+        background-color: #4CAF50; /* Green */
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+    }
+    </style>
+</head>
+<body>
+    <div>
+    <p id="core-content" > 请输入你要朗读的 content</p>
+    </div>
+    <div>
+        <textarea id="text-input" name="w3review" rows="4" cols="50"></textarea>
+    </div>
+    <div>
+        <button id="btn-show" class="button"></button>
+    </div>
+    
 </body>
+<script>
+    (function(){
+        var content_area = document.getElementById("core-content");
+        document.getElementById("btn-show").addEventListener(
+            'click', event => {
+                var text = document.getElementById("text-input").value
+                content_area.innerText=text
+                document.getElementById("text-input").value=""
+            }
+        );
+
+    }())
+</script>
 </html>
