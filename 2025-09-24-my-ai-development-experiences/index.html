@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的 AI 代码开发经历</title>
+	<script defer data-domain="liyafu.com" src="https://plausible.anywherearc.com/js/script.js"></script>
+    
+<style>
+        body {
+            color: #000000;
+            line-height: 1.6em;
+            padding: 1em;
+            box-sizing: border-box;
+            margin: auto;
+            max-width: 72em;
+            background: #fefefe;
+            font-family: Fira Code,Monaco,Consolas,Ubuntu Mono,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,monospace,sans-serif;
+        }
+        blockquote {
+            background: #f9f9f9;
+            border-left: 10px solid #ccc;
+            margin: 1.5em 10px;
+            padding: 0.5em 10px;
+            quotes: "\201C""\201D""\2018""\2019";
+        }
+        blockquote:before {
+            color: #ccc;
+            content: open-quote;
+            font-size: 4em;
+            line-height: 0.1em;
+            margin-right: 0.25em;
+            vertical-align: -0.4em;
+        }
+        blockquote p {
+            display: inline;
+        }
+        em{
+            color: grey;
+        }
+
+        pre{
+            background-color: #eed;
+        }
+        code{
+            background-color: #eed;
+        }
+        nav {
+            margin-bottom: 20px;
+        }
+        small{
+            font-size: smaller;
+        }
+        a {
+            color: #007bff;
+        }
+
+        a:hover,
+        a:focus {
+            color: #0056b3;
+        }
+
+        a:visited{
+            color: grey;
+        }
+
+        article {
+            padding-bottom: 1em;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        body {
+            background-color: #fff;
+            color: #212529;
+        }
+
+        .comments{
+            text-align: center;
+            margin-top: 20px;
+            padding: 5px 10px;
+            font-size: .8rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: .1em;
+            z-index: 1;
+        }
+
+        .utterances{
+            max-width: 100%;
+        }
+        .hr-middle-text{
+            line-height: 1em;
+            position: relative;
+            outline: 0;
+            border: 0;
+            color: black;
+            text-align: center;
+            height: 1.5em;
+            opacity: .5;
+        }
+        .hr-middle-text:before {
+            content: '';
+            background: linear-gradient(to right, transparent, black, transparent);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+        }
+        .hr-middle-text:after{
+            content: attr(data-content);
+            position: relative;
+            display: inline-block;
+            color: black;
+            padding: 0 .5em;
+            line-height: 1.5em;
+            background-color: #fcfcfa;
+        }
+
+        /* _nav style */
+        .navbar-item::before {
+            content: "[ ";
+        }
+        .navbar-item::after {
+            content: " ]"
+        }
+        @media screen and (min-width: 300px) and (max-width: 700px) {
+            .navbar {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .navbar-item {
+                flex: 1;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+            }
+            
+            .nav-btn {
+                flex: 1;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                text-align: center;
+            }
+        }
+        /* _nav style end */
+
+        /* index style */
+        .posts-item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        @media screen and (min-width: 300px) and (max-width: 700px) {
+            .posts-item {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                margin-bottom: 10px;
+            }
+            .posts-item > a {
+                display: inline-block;
+                width: 70%;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+            .posts-item > small {
+                flex: 1;
+                text-align: right;
+            }
+            article{
+                letter-spacing: -0.003em;
+                line-height: 28px;
+                font-size: 18px;
+                word-wrap: break-word;
+            }
+        }
+        /* index style end */
+</style>
+
+    
+<!-- Google Analytics -->
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+
+    ga('create', 'UA-188913654-2', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<!-- End Google Analytics -->
+
+
+</head>
+<body>
+    
+<header>
+    <nav class="navbar">
+        <span class="navbar-item"><a class="nav-btn" href="/">Home</a></span>
+        <span class="navbar-item"><a class="nav-btn" href="/bc/">Blockchain</a></span>
+        <span class="navbar-item"><a class="nav-btn" href="/el/">English Learning</a></span>
+        <span class="navbar-item"><a class="nav-btn" href="/ct/">Chinese Thinking</a></span>
+        <span class="navbar-item"><a class="nav-btn" href="/about/1990-01-01-aboutme">About Me</a></span>
+    </nav>
+</header>
+
+    <article>
+        <h1>我的 AI 代码开发经历</h1>
+<p>最近一个月找了个兼职，干的就是一个后台简单的数据CRUD系统。这个系统很特别，全部代码都是用AI写的。我来的时候前端有基本的功能页面和后端的一些基本的数据库表。看起来是一个像那么回事的系统。我在这里面干了一个月，最后实在受不了 AI 生成代码导致的混乱而离开。</p>
+<p>之前我没有这么大规模的使用AI，也没有这么大量的用 Claude cli。一开始我刚进来工作还尝试手写点代码，然后做小的改动。项目里面几乎全是 AI 生成的代码，我很难去做改动，加上我对 react 那坨东西也不太熟悉。人脑对代码的理解很难跟得上 AI 产出代码的速度，看了没多久我也放弃了手工写代码，全部改用 Claude cli 来写。</p>
+<p>一开始用 claude cli 很惊艳。我用一些很简单的prompt让它去添加某个页面，某个 list 组件，它能很快的做好。而且做出来的前端效果居然完美兼容整个前端 ui 风格，没有乱生成不同风格的 css。这可能也是得益于 react 的功劳。不得不说 Claude cli 写 react 真的很强。很少翻车，也很少会弄出你不想要的功能。</p>
+<p>然后我进入了这个项目的深坑，一个 C 语言写的系统底层。一开始遇到的坑就是编译链接。这个 C 项目本身有一套 makefile，但也是 AI 生成的，会经常出问题。然后就让 AI 去修复编译链接相关的问题。修着修着 AI 会自己写一个 shell 脚本自己去编译。然后我这一个月有很大一部分时间在为 AI 写的这个 shell 脚本修车。不得不说 c 项目的编译依赖是一个极需精力维护的东西。一旦涉及到动态/静态链接，第三方库依赖，各种改代码翻车的事情就会出来。然后 AI 生成的代码编译时会有一大堆的 warning，出错时你要在这一大堆的 warning 里面找 error，然后贴给AI，让它去修复。为什么不让 AI 去做编译？理由很简单，太费token了。如果不省着点用，全部让ai去操作一切，AI 读编译结果输出是一大笔 token 开销，会被 Claude 限制。</p>
+<p>本身 C 项目代码 AI 写起来似乎不难。它能很快的完成一些指定的任务。但面对 segment fault 这种事情也很无力，更不要提查内存泄露的问题了。segment fault 要开 debug 模式把内存布局 dump 出来交给 AI 才能改。另外就是对与一些细小的问题像空指针检查，计算 strlen，memory length，和 tcp package length 这类问题经常会翻车。还有就是你要检查出以上问题出现在什么位置也很难，你只有不断的告诉它在哪里加 log，然后通过 log 判断哪里有问题。或者直接把 log 丢给它，让它去修复。这样每完成一个功能需要花费大量的时间去 debug，最终算下来 debug 的时间并不比开发的时间少。</p>
+<p>这个项目另外一块用的是 golang 开发的后台系统。得益于 go 本身就很简单，完成某些特性的写法也只会有一种。 AI 写 go 代码是非常容易的。而且维护起来比前端 typescript 和 c 语言要容易得多。容易出问题的地方就在数据库的 migration 上。 你把这块交给 AI，就很难得到一个能够在多个环境里保持一致的数据库 schema。得益于 go 语言本身容易阅读的特性，你可以很快速的读明白 AI 生成的代码是干啥的。也能很快速的知道它生成的代码很多是有很大的问题的，经常会舍近求远的写一些不必要的代码，或者用很复杂的方式实现一个很简单的功能。而那个很简单的功能只需要调用其他模块的一个接口即可。然后 AI 会在一个模块里面把代码越写越多。这也可能是 Claude 为了节约读 context 的复杂度，经常能看到 Claude 会拿 grep 命令在代码里面搜来搜去。由此可见 AI 代码的模块的划分和改动是很无力的。极容易产生出一大坨代码全放在一个模块里面的情况。</p>
+<p>这个项目我后面几乎都在调试接口返回的数据是否正确，功能实现是不是正常，端到端网络通信是不是可靠的发出来了，另一边是否正确的接收了。然后还遇到另一个问题就是几个同事一起协作时，merge 代码时产生的痛苦。由于大家都是用 AI 在写代码。提交上来的代码冲突不断，merge 代码时即使是自己这一方写的也判断不出来冲突该如何合并（因为全是 AI 写的）。AI 会经常生成一大堆代码，这也让 merge 代码的工作更加雪上加霜。经常会出现一个功能写完后，可能会不小心在 merge 的时候被删掉。这也对协作产生了不小的挑战。</p>
+<p>我最后离开的原因，就是我一天吭哧吭哧的干了不少时间，最后实际上看到的产出却很少，全都是在修各种各样的运行问题和 debug 一个功能是否真的如预期那样可靠。时间浪费不少，同时又拿着别人的钱在干活，最终又没干多少活。这样对大家都不利的局面我还是及早退出算了。</p>
+
+    </article>
+
+    
+<div class="comments">
+    <hr class="hr-middle-text" data-content="COMMENTS">
+    <script src="https://utteranc.es/client.js" repo="leyafo/leyafo.github.io" issue-term="title" label="Commnets" theme="github-light" crossorigin="anonymous" async >
+    </script>
+</div>
+
+<script>
+    document.querySelectorAll("pre").forEach(function (i) {
+        i.removeAttribute("style")
+    })
+</script>
+</body>
+</html>

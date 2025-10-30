@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>洗碗机悖论</title>
+	<script defer data-domain="liyafu.com" src="https://plausible.anywherearc.com/js/script.js"></script>
+    
+<style>
+        body {
+            color: #000000;
+            line-height: 1.6em;
+            padding: 1em;
+            box-sizing: border-box;
+            margin: auto;
+            max-width: 72em;
+            background: #fefefe;
+            font-family: Fira Code,Monaco,Consolas,Ubuntu Mono,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,monospace,sans-serif;
+        }
+        blockquote {
+            background: #f9f9f9;
+            border-left: 10px solid #ccc;
+            margin: 1.5em 10px;
+            padding: 0.5em 10px;
+            quotes: "\201C""\201D""\2018""\2019";
+        }
+        blockquote:before {
+            color: #ccc;
+            content: open-quote;
+            font-size: 4em;
+            line-height: 0.1em;
+            margin-right: 0.25em;
+            vertical-align: -0.4em;
+        }
+        blockquote p {
+            display: inline;
+        }
+        em{
+            color: grey;
+        }
+
+        pre{
+            background-color: #eed;
+        }
+        code{
+            background-color: #eed;
+        }
+        nav {
+            margin-bottom: 20px;
+        }
+        small{
+            font-size: smaller;
+        }
+        a {
+            color: #007bff;
+        }
+
+        a:hover,
+        a:focus {
+            color: #0056b3;
+        }
+
+        a:visited{
+            color: grey;
+        }
+
+        article {
+            padding-bottom: 1em;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        body {
+            background-color: #fff;
+            color: #212529;
+        }
+
+        .comments{
+            text-align: center;
+            margin-top: 20px;
+            padding: 5px 10px;
+            font-size: .8rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: .1em;
+            z-index: 1;
+        }
+
+        .utterances{
+            max-width: 100%;
+        }
+        .hr-middle-text{
+            line-height: 1em;
+            position: relative;
+            outline: 0;
+            border: 0;
+            color: black;
+            text-align: center;
+            height: 1.5em;
+            opacity: .5;
+        }
+        .hr-middle-text:before {
+            content: '';
+            background: linear-gradient(to right, transparent, black, transparent);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+        }
+        .hr-middle-text:after{
+            content: attr(data-content);
+            position: relative;
+            display: inline-block;
+            color: black;
+            padding: 0 .5em;
+            line-height: 1.5em;
+            background-color: #fcfcfa;
+        }
+
+        /* _nav style */
+        .navbar-item::before {
+            content: "[ ";
+        }
+        .navbar-item::after {
+            content: " ]"
+        }
+        @media screen and (min-width: 300px) and (max-width: 700px) {
+            .navbar {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .navbar-item {
+                flex: 1;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+            }
+            
+            .nav-btn {
+                flex: 1;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                text-align: center;
+            }
+        }
+        /* _nav style end */
+
+        /* index style */
+        .posts-item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        @media screen and (min-width: 300px) and (max-width: 700px) {
+            .posts-item {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                margin-bottom: 10px;
+            }
+            .posts-item > a {
+                display: inline-block;
+                width: 70%;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+            .posts-item > small {
+                flex: 1;
+                text-align: right;
+            }
+            article{
+                letter-spacing: -0.003em;
+                line-height: 28px;
+                font-size: 18px;
+                word-wrap: break-word;
+            }
+        }
+        /* index style end */
+</style>
+
+    
+<!-- Google Analytics -->
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+
+    ga('create', 'UA-188913654-2', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<!-- End Google Analytics -->
+
+
+</head>
+<body>
+    
+<header>
+    <nav class="navbar">
+        <span class="navbar-item"><a class="nav-btn" href="/">Home</a></span>
+        <span class="navbar-item"><a class="nav-btn" href="/bc/">Blockchain</a></span>
+        <span class="navbar-item"><a class="nav-btn" href="/el/">English Learning</a></span>
+        <span class="navbar-item"><a class="nav-btn" href="/ct/">Chinese Thinking</a></span>
+        <span class="navbar-item"><a class="nav-btn" href="/about/1990-01-01-aboutme">About Me</a></span>
+    </nav>
+</header>
+
+    <article>
+        <h1>洗碗机悖论</h1>
+<p>搬新家后我给自己买了一台二手洗碗机。洗碗机在闲鱼是个特殊的存在。用洗碗机的人基数不大，通常用的人肯定是自己的房产，有自己房子的人不太会去买个二手电器放家里，更不可能买二手洗碗机放家里。而租房的人买洗碗机更少，在一线城市租房都很贵，拥有完整厨房功能的房子都极少，更别说能有空间放下一台洗碗机。因此大家会看到咸鱼里面小型洗碗机很受欢迎，大机器十分之一价格出售却无人问津。</p>
+<p>洗碗机这东西也有个bug级别的体验：小机器体验不如大机器好。这进一步减缓洗碗机进入厨房的步伐。但我观察身边和网上对洗碗机评价后发现，洗碗机普及最大阻碍还是人脑中的观念。</p>
+<p>我这些年给家里买过两台洗碗机。大家用了几年后，总体还是不那么信任洗碗机。我父母更是到了排斥且抗拒的地步。认为这东西费水/费电/费耗材，还洗不干净。</p>
+<p>对于洗碗机的偏见，我观察到底现象是：
+人们总是过分高估自己做事情的成果，过分低估自己亲力亲为的成本。</p>
+<p>仔细了解一下洗碗机的原理会知道，这东西不太可能会比手洗的效果差。高压，高温水枪，无死角喷射，加上特制的洗碗粉，手洗是绝对无法企及的。除非碗筷摆放的位置不太对。</p>
+<p>观察对洗碗机不满的主要有这么几类：</p>
+<ol>
+<li>怕残渣不事先清理好，堵下水道的。</li>
+<li>放洗碗机前必须要先用水预先冲洗一下，或者摆盘太麻烦。还不如直接动手洗完。</li>
+<li>偶尔有那么几个没洗干净的，拿出来感觉恶心。</li>
+<li>费水/费电/费耗材。</li>
+</ol>
+<p>这几个问题实际上都不用去真正动手解决。</p>
+<ol>
+<li>现在城市的下水道很强大，碗里面那点残渣在卫生间下水道那样的排水能力前不值一提。</li>
+<li>这纯属给自己找事，不实现预洗实际上会洗的更干净。</li>
+<li>忍受不完美，下次别摆太密集了。</li>
+<li>时间成本更贵。更何况你还真不一定比洗碗机更省水。</li>
+</ol>
+<p>如果把洗碗机想象成你雇佣的一个工人，他能帮你把碗和玻璃杯洗得亮晶晶，而你只需要付他点水电费和几毛钱的洗碗耗材。你只需要很简单的把碗摆好即可。这时候偶尔有几个不干净的碗，你会开除他，然后自己动手把他的工作干了吗？一次两次或许没问题，但一直需要你耗费脑力，体力，时间去做这件事呢？</p>
+<p>很多人只关心洗碗这件事一次两次的所需付出的时间和体力。
+即使在体验过一段时间的洗碗机后，发觉效果不理想，不提升使用机器的操作，转而回头顽固选择用手洗。</p>
+<p>可以想象，当一个社会出现变革。新的技术和新的做事方式，即使能用户让得到一些收益。如果收益看起来很粗糙且不完美，人们会顽固的因为观念和习惯回到旧有的低效路径上去。而且还会忽略自身停滞不前的能力和机器以及工业化一直向前改进的速度。</p>
+
+    </article>
+
+    
+<div class="comments">
+    <hr class="hr-middle-text" data-content="COMMENTS">
+    <script src="https://utteranc.es/client.js" repo="leyafo/leyafo.github.io" issue-term="title" label="Commnets" theme="github-light" crossorigin="anonymous" async >
+    </script>
+</div>
+
+<script>
+    document.querySelectorAll("pre").forEach(function (i) {
+        i.removeAttribute("style")
+    })
+</script>
+</body>
+</html>

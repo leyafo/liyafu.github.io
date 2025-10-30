@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实体店的全面崩塌</title>
+	<script defer data-domain="liyafu.com" src="https://plausible.anywherearc.com/js/script.js"></script>
+    
+<style>
+        body {
+            color: #000000;
+            line-height: 1.6em;
+            padding: 1em;
+            box-sizing: border-box;
+            margin: auto;
+            max-width: 72em;
+            background: #fefefe;
+            font-family: Fira Code,Monaco,Consolas,Ubuntu Mono,PingFang SC,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,monospace,sans-serif;
+        }
+        blockquote {
+            background: #f9f9f9;
+            border-left: 10px solid #ccc;
+            margin: 1.5em 10px;
+            padding: 0.5em 10px;
+            quotes: "\201C""\201D""\2018""\2019";
+        }
+        blockquote:before {
+            color: #ccc;
+            content: open-quote;
+            font-size: 4em;
+            line-height: 0.1em;
+            margin-right: 0.25em;
+            vertical-align: -0.4em;
+        }
+        blockquote p {
+            display: inline;
+        }
+        em{
+            color: grey;
+        }
+
+        pre{
+            background-color: #eed;
+        }
+        code{
+            background-color: #eed;
+        }
+        nav {
+            margin-bottom: 20px;
+        }
+        small{
+            font-size: smaller;
+        }
+        a {
+            color: #007bff;
+        }
+
+        a:hover,
+        a:focus {
+            color: #0056b3;
+        }
+
+        a:visited{
+            color: grey;
+        }
+
+        article {
+            padding-bottom: 1em;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        body {
+            background-color: #fff;
+            color: #212529;
+        }
+
+        .comments{
+            text-align: center;
+            margin-top: 20px;
+            padding: 5px 10px;
+            font-size: .8rem;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: .1em;
+            z-index: 1;
+        }
+
+        .utterances{
+            max-width: 100%;
+        }
+        .hr-middle-text{
+            line-height: 1em;
+            position: relative;
+            outline: 0;
+            border: 0;
+            color: black;
+            text-align: center;
+            height: 1.5em;
+            opacity: .5;
+        }
+        .hr-middle-text:before {
+            content: '';
+            background: linear-gradient(to right, transparent, black, transparent);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+        }
+        .hr-middle-text:after{
+            content: attr(data-content);
+            position: relative;
+            display: inline-block;
+            color: black;
+            padding: 0 .5em;
+            line-height: 1.5em;
+            background-color: #fcfcfa;
+        }
+
+        /* _nav style */
+        .navbar-item::before {
+            content: "[ ";
+        }
+        .navbar-item::after {
+            content: " ]"
+        }
+        @media screen and (min-width: 300px) and (max-width: 700px) {
+            .navbar {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .navbar-item {
+                flex: 1;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+            }
+            
+            .nav-btn {
+                flex: 1;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                text-align: center;
+            }
+        }
+        /* _nav style end */
+
+        /* index style */
+        .posts-item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        @media screen and (min-width: 300px) and (max-width: 700px) {
+            .posts-item {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                margin-bottom: 10px;
+            }
+            .posts-item > a {
+                display: inline-block;
+                width: 70%;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+            .posts-item > small {
+                flex: 1;
+                text-align: right;
+            }
+            article{
+                letter-spacing: -0.003em;
+                line-height: 28px;
+                font-size: 18px;
+                word-wrap: break-word;
+            }
+        }
+        /* index style end */
+</style>
+
+    
+<!-- Google Analytics -->
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+
+    ga('create', 'UA-188913654-2', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<!-- End Google Analytics -->
+
+
+</head>
+<body>
+    
+<header>
+    <nav class="navbar">
+        <span class="navbar-item"><a class="nav-btn" href="/">Home</a></span>
+        <span class="navbar-item"><a class="nav-btn" href="/bc/">Blockchain</a></span>
+        <span class="navbar-item"><a class="nav-btn" href="/el/">English Learning</a></span>
+        <span class="navbar-item"><a class="nav-btn" href="/ct/">Chinese Thinking</a></span>
+        <span class="navbar-item"><a class="nav-btn" href="/about/1990-01-01-aboutme">About Me</a></span>
+    </nav>
+</header>
+
+    <article>
+        <h1>实体店的全面崩塌</h1>
+<p>我已经很久不怎么去实体店买东西了。平常买菜和生活用品都是山姆和盒马。山姆大部分是网购，盒马线下去得比较多。其他附近三公里的超市，便利店我很少会去，除非有什么东西是立即需要的。</p>
+<p>来深圳生活后，住的地方附近餐馆特别多，实体店铺除了餐馆还是餐馆。而我自己的消费习惯除了出去吃饭，或者社交性吃饭以外，能网购尽量网购。</p>
+<p>我小时候生活的地方买东西都是靠砍价，货比三家的问。当顾客想货比三家时，就会在同一条街闲逛和问价。这就造成了商业街的繁荣。网购让这一范式发生了转移。大家把逛街这一行为变成了“逛淘宝”。</p>
+<p>范式转移的并不是仅仅是让用户的习惯从线下变成线上，而是加入了电商平台这样的第三方和用户评价记录。这让用户的购物体验大大的提升，资源聚拢肥了三方平台，买假货垃圾货的商家难度也大大提升。</p>
+<p>但现在我不愿意去实体店最大原因主要是贵，花时间且没有性价比，购物质量很难有保障。一个典型的例子就是菜市场。年轻人很少愿意再去菜市场，而老年人去得比较多。但国内喜欢经常去菜市场的这帮老年人可不太好伺候，他们时间大把，对蔬菜挑挑拣拣也非常影响其他顾客观感。商家自然升级了斗争手段，开始启用各种猪肉/蔬菜/水果美颜灯。最终的结果就是典型的劣质经济模式的体现，商家挣不到钱，顾客只能买到劣质产品。</p>
+<p>我观察到的另一个现象就是实体店的东西普遍比网上要贵一大截。并且质量还不怎么样。这里面的重灾区就是五金店，啥都有的五金店商品质量是拼多多水准，价格却贵很多。顾客越少的店铺，买东西被宰的概率会越高。关键是这帮实体店的老板进货渠道可能还真不如某个拼多多的供应商家。</p>
+<p>所以现在开实体店的老板真需要一定的独门秘籍。你要和1000公里以外的线上商家比价格和质量。唯一的优势只剩下那点可怜的“所见即所得”。不然开实体店还真是给房东送人头。</p>
+<p>另外一个观察就是深圳这边摆地摊的越来越多，尤其是餐饮类的。但奇怪的就是在质量和价格上，他们相对饭店没有任何优势。但前赴后继去摆摊的人依然没有减少。可能他们做的并不是理性消费者的生意，只是一个肚子饿的顾客路过一个小摊，10分钟内能吃上一盆热腾腾的炒面。</p>
+
+    </article>
+
+    
+<div class="comments">
+    <hr class="hr-middle-text" data-content="COMMENTS">
+    <script src="https://utteranc.es/client.js" repo="leyafo/leyafo.github.io" issue-term="title" label="Commnets" theme="github-light" crossorigin="anonymous" async >
+    </script>
+</div>
+
+<script>
+    document.querySelectorAll("pre").forEach(function (i) {
+        i.removeAttribute("style")
+    })
+</script>
+</body>
+</html>
